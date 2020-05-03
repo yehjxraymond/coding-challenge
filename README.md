@@ -6,6 +6,7 @@ In this repository I practice some programming challenge in Typescript.
 
 ## Daily Coding Challenge
 
-| Question                          | Solution                                   |
-| --------------------------------- | ------------------------------------------ |
-| [459](./src/daily/459/problem.md) | [Solution](./src/daily/459/mathTheorem.ts) |
+| Question                          | Solution                                     |
+| --------------------------------- | -------------------------------------------- |
+| [459](./src/daily/459/problem.md) | [Solution](./src/daily/459/mathTheorem.ts)   |
+| [460](./src/daily/460/problem.md) | [Solution](./src/daily/460/solution.test.ts) |

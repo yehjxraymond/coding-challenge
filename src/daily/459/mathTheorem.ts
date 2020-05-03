@@ -17,16 +17,16 @@ export const mathTheorem = (input: number): number => {
 
   // If number is perfect square, return 1
   if (isPerfectSquare(input)) return 1;
-  
+
   // If number is sum of 2 perfect square, return 2
   for (let i = 1; i <= Math.floor(Math.sqrt(input)); i += 1) {
     const remainder = input - Math.pow(i, 2);
     if (isPerfectSquare(remainder)) return 2;
   }
-  
+
   // If number cannot be expressed in above, return 3
   if (!fitsFormula(input)) return 3;
-  
+
   // else return 4
   return 4;
 };
