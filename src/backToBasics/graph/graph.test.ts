@@ -32,3 +32,14 @@ it("does DFS traversal", () => {
   expect(graph.dfs("a")).toEqual(["a", "c", "d", "b"]);
   expect(graph.dfs("c")).toEqual(["c", "a", "b", "d"]);
 });
+
+it("detects cycle", () => {
+  const graph1 = new Graph(["a", "b"]);
+  graph1.addEdge("a", "b");
+  graph1.addEdge("b", "a");
+  expect(graph1.detectCycle()).toEqual(true);
+
+  const graph2 = new Graph(["a", "b"]);
+  graph2.addEdge("a", "b");
+  expect(graph2.detectCycle()).toEqual(false);
+});

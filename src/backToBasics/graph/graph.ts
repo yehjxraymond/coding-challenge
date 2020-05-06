@@ -64,6 +64,25 @@ export class Graph {
   }
 
   // Detect cycle in directed graph
+  detectCycle() {
+    // Assuming connected DAG
+    const startVertex = this.vertices[0];
+
+    const visited = [startVertex];
+    const queue = [...this.edges[startVertex]];
+    while (queue.length > 0) {
+      const vertexToVisit = queue.shift();
+      if (!vertexToVisit) continue;
+      visited.push(vertexToVisit);
+      const vertexLinked = this.edges[vertexToVisit];
+      for(let i=0; i<vertexLinked.length; i+=1){
+        const vertex = vertexLinked[i];
+        if (visited.includes(vertex)) return true;
+        if (!queue.includes(vertex)) queue.unshift(vertex);
+      };
+    }
+    return false;
+  }
 
   // Detect cycle in undirected graph
 
